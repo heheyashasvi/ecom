@@ -1,0 +1,5 @@
+{
+  "name": "SwiftAdmin - E-commerce Product Management Dashboard",
+  "description": "A high-performance administrative dashboard for managing products, visualizing sales metrics, and onboarding administrators. Features CRUD operations, multi-step forms, and interactive charts.",
+  "requestFramePermissions": []
+}

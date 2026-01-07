@@ -1,36 +1,66 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Server-Rendered E-commerce Product Management Dashboard
 
-## Getting Started
+A high-performance, server-side rendered (SSR) administrative dashboard for managing products in an e-commerce system. Built with Next.js, Tailwind CSS, shadcn/ui, and MongoDB.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Server-Side Rendering (SSR)**: Enhanced performance and SEO using Next.js App Router.
+- **Secure Authentication**: Admin login and protected routes using Next.js Auth.
+- **Product Management**: Complete CRUD operations for products (Create, Read, Update, Delete).
+- **Search & Filter**: Server-side filtering and sorting (implemented in API).
+- **Image Upload**: Seamless image uploads using Cloudinary.
+- **Data Visualization**: Interactive charts for stock and categories using Recharts.
+- **Admin Onboarding**: Secure secret-based registration for new admins.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Tech Stack
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Framework**: Next.js 14 (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS, shadcn/ui
+- **Database**: MongoDB (Mongoose)
+- **Auth**: NextAuth.js
+- **Charts**: Recharts
+- **Forms**: React Hook Form + Zod
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Setup Instructions
 
-## Learn More
+1. **Clone the repository** (or use the existing directory).
 
-To learn more about Next.js, take a look at the following resources:
+2. **Install dependencies**:
+   ```bash
+   npm install
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. **Configure Environment Variables**:
+   Create a `.env.local` file in the root directory:
+   ```env
+   MONGODB_URI=mongodb://localhost:27017/ecommerce-dashboard
+   NEXTAUTH_SECRET=changeme_in_production_secret_key_123
+   NEXTAUTH_URL=http://localhost:3000
+   ADMIN_SECRET=secret123
+   NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME=your_cloud_name
+   ```
+   *Note: Update `MONGODB_URI` if using a remote cluster.*
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+4. **Run the development server**:
+   ```bash
+   npm run dev
+   ```
 
-## Deploy on Vercel
+5. **Open the application**:
+   Visit [http://localhost:3000](http://localhost:3000).
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Admin Onboarding
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+To create the first admin account:
+1. Navigate to `/admin/onboard`.
+2. Fill in your details.
+3. Enter the Admin Secret (default: `secret123` as configured in `.env.local`).
+4. Login at `/auth/login`.
+
+## Project Structure
+
+- `src/app`: App Router pages and API routes.
+- `src/components`: Reusable UI components.
+- `src/lib`: Utilities (Database connection, helpers).
+- `src/models`: Mongoose models.
