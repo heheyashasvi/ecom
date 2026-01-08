@@ -2,6 +2,7 @@
 
 import { ColumnDef } from "@tanstack/react-table"
 import { ArrowUpDown, MoreHorizontal, Pencil, Trash, Copy } from "lucide-react"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import {
     DropdownMenu,
@@ -24,10 +25,29 @@ export type Product = {
     category: string
     status: "active" | "draft" | "archived"
     sku: string
+    images: string[]
     createdAt: string
 }
 
 export const columns: ColumnDef<Product>[] = [
+    {
+        accessorKey: "images",
+        header: "Image",
+        cell: ({ row }) => {
+            const images = row.getValue("images") as string[];
+            const image = images?.[0] || "/placeholder.svg";
+            return (
+                <div className="relative h-10 w-10 overflow-hidden rounded-md border">
+                    <Image
+                        src={image}
+                        alt="Product Image"
+                        fill
+                        className="object-cover"
+                    />
+                </div>
+            );
+        },
+    },
     {
         accessorKey: "name",
         header: ({ column }) => {
