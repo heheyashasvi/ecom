@@ -274,8 +274,8 @@ export default function ProductForm({ initialData }: ProductFormProps) {
                                                 <ImageUpload
                                                     value={field.value.map((image) => image)}
                                                     disabled={loading}
-                                                    onChange={(urls) => field.onChange([...field.value, ...urls])}
-                                                    onRemove={(url) => field.onChange([...field.value.filter((current) => current !== url)])}
+                                                    onChange={(urls) => field.onChange(urls)}
+                                                    onRemove={(url) => field.onChange(field.value.filter((current) => current !== url))}
                                                 />
                                             </FormControl>
                                             <FormMessage />
