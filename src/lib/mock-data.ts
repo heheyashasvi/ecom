@@ -8,7 +8,7 @@ export const MOCK_PRODUCTS = [
         category: "Electronics",
         status: "active",
         sku: "WH-001",
-        images: ["/placeholder.png"],
+        images: ["/placeholder.svg"],
         createdAt: new Date().toISOString(),
     },
     {
@@ -20,7 +20,7 @@ export const MOCK_PRODUCTS = [
         category: "Furniture",
         status: "active",
         sku: "EC-002",
-        images: ["/placeholder.png"],
+        images: ["/placeholder.svg"],
         createdAt: new Date().toISOString(),
     },
     {
@@ -32,7 +32,7 @@ export const MOCK_PRODUCTS = [
         category: "Electronics",
         status: "archived",
         sku: "MK-003",
-        images: ["/placeholder.png"],
+        images: ["/placeholder.svg"],
         createdAt: new Date().toISOString(),
     }
 ];
