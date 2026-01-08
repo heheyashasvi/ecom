@@ -60,33 +60,40 @@ export default function ImageUpload({
                     </div>
                 ))}
             </div>
-            <CldUploadWidget
-                onSuccess={onUpload}
-                uploadPreset="unsigned_preset"
-                options={{
-                    maxFiles: 5
-                }}
-            >
-                {({ open }) => {
-                    const onClick = () => {
-                        if (open) {
-                            open();
+            {process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME ? (
+                <CldUploadWidget
+                    onSuccess={onUpload}
+                    uploadPreset="unsigned_preset"
+                    options={{
+                        maxFiles: 5
+                    }}
+                >
+                    {({ open }) => {
+                        const onClick = () => {
+                            if (open) {
+                                open();
+                            }
                         }
-                    }
 
-                    return (
-                        <Button
-                            type="button"
-                            disabled={disabled}
-                            variant="secondary"
-                            onClick={onClick}
-                        >
-                            <ImagePlus className="mr-2 h-4 w-4" />
-                            Upload Image (Cloudinary)
-                        </Button>
-                    )
-                }}
-            </CldUploadWidget>
+                        return (
+                            <Button
+                                type="button"
+                                disabled={disabled}
+                                variant="secondary"
+                                onClick={onClick}
+                            >
+                                <ImagePlus className="mr-2 h-4 w-4" />
+                                Upload Image (Cloudinary)
+                            </Button>
+                        )
+                    }}
+                </CldUploadWidget>
+            ) : (
+                <div className="rounded-md border border-yellow-200 bg-yellow-50 p-4 text-sm text-yellow-800 dark:border-yellow-900 dark:bg-yellow-950 dark:text-yellow-200">
+                    <p className="font-semibold">Cloudinary Not Configured</p>
+                    <p>Unconfigured cloud name prevents upload widget from loading.</p>
+                </div>
+            )}
 
             {/* Manual URL Input Fallback */}
             <div className="mt-4 flex items-center gap-4">
