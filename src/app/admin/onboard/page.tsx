@@ -131,9 +131,13 @@ export default function OnboardPage() {
                                 {loading ? "Create Admin" : "Create Admin"}
                             </Button>
                         </form>
-                    </Form>
                 </CardContent>
             </Card>
-        </div>
+            <div className="absolute top-4 left-4">
+                <Button variant="outline" onClick={() => router.push("/")}>
+                    ← Back to Dashboard
+                </Button>
+            </div>
+        </div >
     )
 }
