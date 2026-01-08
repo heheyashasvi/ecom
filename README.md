@@ -2,6 +2,12 @@
 
 A high-performance, server-side rendered (SSR) administrative dashboard for managing products in an e-commerce system. Built with Next.js, Tailwind CSS, shadcn/ui, and MongoDB.
 
+## Live Demo
+
+**Live Link**: [https://ecom-git-main-yashasvis-projects-5366dfe2.vercel.app](https://ecom-git-main-yashasvis-projects-5366dfe2.vercel.app)  
+**Email**: `demo@example.com`  
+**Password**: `demo123`
+
 ## Features
 
 - **Server-Side Rendering (SSR)**: Enhanced performance and SEO using Next.js App Router.

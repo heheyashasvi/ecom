@@ -17,6 +17,16 @@ export const authOptions: NextAuthOptions = {
                     throw new Error("Invalid credentials");
                 }
 
+                // HARDCODED DEMO USER FOR PUBLIC ACCESS
+                if (credentials.email === "demo@example.com" && credentials.password === "demo123") {
+                    return {
+                        id: "demo_user_id",
+                        name: "Demo Admin",
+                        email: "demo@example.com",
+                        role: "admin",
+                    };
+                }
+
                 // CHECK FOR MOCK MODE
                 // We use process.env.MOCK_MODE which was set in db.ts or env file
                 // Note: db.ts handles the connection logic, but here we need to bypass User.findOne
