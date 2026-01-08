@@ -131,6 +131,7 @@ export default function OnboardPage() {
                                 {loading ? "Create Admin" : "Create Admin"}
                             </Button>
                         </form>
+                    </Form>
                 </CardContent>
             </Card>
             <div className="absolute top-4 left-4">
