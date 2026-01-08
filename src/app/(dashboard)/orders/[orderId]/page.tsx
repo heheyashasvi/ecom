@@ -27,11 +27,14 @@ async function getOrder(orderId: string) {
         const order = await Order.findById(orderId).lean()
         return order ? JSON.parse(JSON.stringify(order)) : null
     } catch (e) {
-        return null
+        // Fallback to mock data if ID is not a valid ObjectId (e.g. "ord_1")
+        const mockOrder = MOCK_ORDERS.find(o => o._id === orderId)
+        return mockOrder ? JSON.parse(JSON.stringify(mockOrder)) : null
     }
 }
 
-export default async function OrderDetailsPage({ params }: OrderDetailsPageProps) {
+export default async function OrderDetailsPage(props: { params: Promise<{ orderId: string }> }) {
+    const params = await props.params;
     const order = await getOrder(params.orderId)
 
     if (!order) {
