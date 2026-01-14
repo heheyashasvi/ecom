@@ -7,7 +7,7 @@ A high-performance, server-side rendered (SSR) administrative dashboard for mana
 **Live Link**: [https://ecom-git-main-yashasvis-projects-5366dfe2.vercel.app](https://ecom-git-main-yashasvis-projects-5366dfe2.vercel.app)  
 **Email**: `demo@example.com`  
 **Password**: `demo123`
-
+**SecretKey** secret123 (for adding admin)
 ## Features
 
 - **Server-Side Rendering (SSR)**: Enhanced performance and SEO using Next.js App Router.
